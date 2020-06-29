@@ -65,6 +65,8 @@ const doScreenshot = () => {
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0);
   screenshotImage.src = canvas.toDataURL('image/webp');
+  var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  window.location.href=image;     //download as file..rename to jpeg
   screenshotImage.classList.remove('d-none');
 };
 
